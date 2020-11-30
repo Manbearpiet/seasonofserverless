@@ -7,6 +7,21 @@ Participants receive a new delicious challenge every week, in which you're chall
 This repository holds my solutions (Azure Function code in PowerShell) for the problems.
 
 To help other with their problems, I'll show how I solved this with the approach I took. 
+<!-- 
+
+## Week X
+
+### Usage
+
+### Solution
+
+### Let's get coding
+
+### Writing PowerShell
+
+### Review week 1
+
+-->
 
 ## Week 2
 
