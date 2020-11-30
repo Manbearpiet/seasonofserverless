@@ -1,4 +1,4 @@
-# seasonofserverless
+# Season of Serverless
 
 Welcome to my repository with my solutions to the initiative https://github.com/microsoft/Seasons-of-Serverless.
 
