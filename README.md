@@ -153,13 +153,11 @@ $weight = $Request.Query.Weight
 if (-not $weight) {
     $weight = $Request.Body.Weight
 }
+```
+I need to be sure my $weight is a number, else multiplication will be non-sense. I used TryParse for this, there are many ways to do this. 
+We want to make sure we have something we can multiply our ingredients with as a weight factor. In case we don't have that we need to make sure the chef knows this and knows what to do.
 
-
-# I need to be sure my $weight is a number, else multiplication will be non-sense. 
-# I used the TryParse, there are many ways to do this. Usually you validate this in your param block.
-# We want to make sure we have something we can multiply our ingredients with as a weight factor. 
-# In case we don't have that we need to make sure the chef knows this and knows what to do.
-
+```ps
 $parsedweight = 0
 if ($weight -is "Int32" -or $weight -is "Double") {
     Write-Host "Already an Integer"
@@ -173,13 +171,15 @@ if ($weight -is "Int32" -or $weight -is "Double") {
         })
     exit
 }
+```
 
-# The ingredients in this recipe all share the same property in that their measures are defined by their relation to the weight of the turkey.
-# So if we build simple  logic, we can reuse that and focus on the differences. 
-# I created a hashtable to contain our ingredients, this easily converts to the JSON-object we need to output.
-# In each line I created a key for our hashtable with the name of the ingredient, the value of this key is a string (of text) which is calculated with the weight.
-# By using sub-expression (https://ss64.com/ps/syntax-operators.html) we can calculate the ingredient before outputting it
+The ingredients in this recipe all share the same property in that their measures are defined by their relation to the weight of the turkey.
+So if we build simple logic, we can reuse that and focus on the differences. 
+I created a hashtable to contain our ingredients, this easily converts to the JSON-object we need to output.
+In each line I created a key for our hashtable with the name of the ingredient, the value of this key is a string (of text) which is calculated with the weight.
+By using sub-expression (https://ss64.com/ps/syntax-operators.html) we can calculate the ingredient before outputting it.
 
+```
 $body = @{
     "Salt"                  = "$(0.05 * $weight) cups"
     "Water"                 = "$(0.66 * $weight) gallons"
