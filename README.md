@@ -201,3 +201,14 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
         Body       = $body
     })
 ``` 
+
+### Review week 1
+
+I do have a few problems with my approach, it was a fast try to solve this.
+
+* I have no reason to validate if it's an integer, I already know it's going to be text if it's called via my function
+* The `* time`-ingredients should have a prettier output with minutes
+* The measure are usually in whole or half measures, also it's hardcoded plural.
+* There are probably prettier ways to validate the $weight factor
+
+All in all I had fun building this and look forward to week 2
