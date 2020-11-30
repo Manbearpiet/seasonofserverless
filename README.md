@@ -8,6 +8,20 @@ This repository holds my solutions (Azure Function code in PowerShell) for the p
 
 To help other with their problems, I'll show how I solved this with the approach I took. 
 
+## Week 2
+
+### Usage
+
+### Solution
+
+### Let's get coding
+
+### Writing PowerShell
+
+### Review week 1
+
+
+
 ## Week 1
 
 ### Usage
@@ -72,7 +86,7 @@ In this instruction some things are relevant to us:
 
 Functions work based on triggers, so we should create a function logic, which accepts the cook' input (weight of the turkey in lbs.), calculates and outputs the relevant information. 
 
-## Let's get started.
+### Let's get coding.
 
 To get started I used Visual Studio Code and the Azure Extension.
 This extension has a nice functionality that I can create, test and deploy Azure Functions, written in: C#, Java, JavaScript, PowerShell, Python or Typescript; all throught the GUI, without having to do multiple steps by myself. Because remember an Azure Function is similar to a web-app, it's contained within an Azure App Service Plan, and logs should be transferred and analyzed with Application Insights. Luckily the extension deploys all of these for you. For more information see (https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-powershell#create-an-azure-functions-project)
@@ -131,7 +145,7 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 })
 ```
 
-## Writing PowerShell
+### Writing PowerShell
 
 The template is an awesome start, but we lack a few things:
 
